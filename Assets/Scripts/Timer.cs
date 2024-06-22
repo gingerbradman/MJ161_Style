@@ -6,12 +6,13 @@ using UnityEngine;
 //			This timer's smallest unit is decisecond, which is good enough most of the time, although 
 //			it technically works for smaller time value if not paused (unless you encounters floating point number imprecision, then skill issue ig ¯\_(ツ)_/¯)
 //			If paused while the time is not rounded to first digit after whole number, the remaining time will be rounded up (EX: 5.672 --> 5.7)
+//			Calling begin while timer has already started has no effect.\
 
 public class Timer : MonoBehaviour
 {
 	const float TIME_UNIT = 0.1f;		//Change this if you need a smaller time unit, but in what situation do you want something smaller than .1 sec???
 	public float duration = 60;
-	private float time_left;
+	[SerializeField] float time_left;
 	public float timeRemaining
 	{
 		set { time_left = Mathf.Clamp(value,0,duration); }
@@ -24,7 +25,7 @@ public class Timer : MonoBehaviour
 	public event TimerEvent OnTimerEnded;
 	private event TimerEvent OnTimerDestroyed;
 	private bool isCountingDown;
-	private bool paused;
+	private bool paused = true;
 	public bool isPaused
 	{
 		get { return paused; }
@@ -38,10 +39,10 @@ public class Timer : MonoBehaviour
 
 	public void Begin()
 	{
-		isPaused = false;
+		if (!isPaused) {return;}
 		duration = Mathf.Clamp(duration, 0f, 86400f);
 		timeRemaining = duration;
-		_tick();
+		isPaused = false;
 	}
 
 	private void _tick()
@@ -52,10 +53,8 @@ public class Timer : MonoBehaviour
 
 		if (timeRemaining > TIME_UNIT) { Invoke("_tick", TIME_UNIT); }
 		else if (timeRemaining > 0) { Invoke("_tick", timeRemaining); }
-		else
-		{
-			Stop();
-		}
+		else Stop();
+		if (LoopTimer) {Begin();}
 	}
 
 	private void SetPause(bool value)
@@ -70,7 +69,6 @@ public class Timer : MonoBehaviour
 		isPaused = true;
 		OnTimerEnded?.Invoke();
 		if (destroyOnEnd) { Component.Destroy(this); }
-		else if (LoopTimer) { Begin(); }
 	}
 
 	void OnDestroy()
