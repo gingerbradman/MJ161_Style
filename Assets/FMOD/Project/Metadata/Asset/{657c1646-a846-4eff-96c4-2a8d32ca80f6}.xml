@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{657c1646-a846-4eff-96c4-2a8d32ca80f6}">
+		<property name="assetPath">
+			<value>SFX/Game/Notification/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{79460355-faa9-4c82-a423-926f17cf3065}</destination>
+		</relationship>
+	</object>
+</objects>
