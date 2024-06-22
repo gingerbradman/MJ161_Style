@@ -10,13 +10,11 @@ public class MachineLogic : RenderedObject
     event Global.Event MachineStarted;
 	Timer ProductionTimer;
 	bool InProduction;
-	[SerializeField] List<ItemMaterial> materialsRequired;
-	[SerializeField] Product product;
-	[SerializeField] float ProductionTime = 3f;
+	[SerializeField] MachineBase machine;
 
 	void Start()
 	{
-		ProductionTimer = Timer.CreateTimer(ProductionTime, gameObject, true, false, false);
+		ProductionTimer = Timer.CreateTimer(machine.ProductionTime, gameObject, true, false, false);
 		ProductionTimer.OnTimerEnded += OnTimerEnded;
 		
 	}
@@ -26,7 +24,7 @@ public class MachineLogic : RenderedObject
 		if (InProduction) {return; }
 		var p = GameManager.Instance.player.materials;
 		var inv = new List<ItemMaterial>(p);
-		foreach (var mat in materialsRequired)
+		foreach (var mat in machine.materialsRequired)
 		{
 			var hasMaterial = false;
 			foreach (var m in inv)
@@ -41,7 +39,7 @@ public class MachineLogic : RenderedObject
 			if (!hasMaterial) {return;}
 		}
 
-		foreach (var mat in materialsRequired)
+		foreach (var mat in machine.materialsRequired)
 		{
 			foreach (var m in p)
 			{
@@ -67,6 +65,6 @@ public class MachineLogic : RenderedObject
 	void OnTimerEnded()
 	{
 		InProduction = false;
-		GameManager.Instance.player.Append(product);
+		GameManager.Instance.player.Append(machine.product);
 	}
 }
