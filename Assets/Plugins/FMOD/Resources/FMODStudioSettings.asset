@@ -240,7 +240,9 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - MasterBank
-  Banks: []
+  Banks:
+  - MainMenuMusic
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
