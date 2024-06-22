@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c98ce188b69619428504b47d3781e32, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
-  Name: 
+  Name: THIS
   Icon: {fileID: 0}
   materialDescription: 
   ExpectedValue: 0

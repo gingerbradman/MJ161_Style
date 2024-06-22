@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d4a6954b74f6d741ae7e09dce46c5b2, type: 2}
   product: {fileID: 11400000, guid: 4de959d3cecc3bf41a46d49686ae83cd, type: 2}
   ProductionTime: 3
-  sprite: {fileID: 0}
+  sprite: {fileID: -1395125190, guid: 880447e04c6c7fb4a9478f9a6ea4c6cb, type: 3}

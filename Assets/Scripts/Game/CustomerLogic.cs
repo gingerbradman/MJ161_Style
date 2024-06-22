@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class CustomerLogic : RenderedObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
 }

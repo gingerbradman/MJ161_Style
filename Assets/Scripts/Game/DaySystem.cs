@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DaySystem : Singleton<DaySystem>
+public class DaySystem : MonoBehaviour
 {
 	public int Day;
 	public event Global.Event DayEnded;
 	public event Global.Event DayStarted;
 	public Timer DayTimer;
 
-	protected override void OnAwake()
+	void Awake()
 	{
-		DayTimer.OnTimerEnded += Instance.EndDay;
+		DayTimer.OnTimerEnded += EndDay;
 	}
 
 	public void StartDay()		//To start the day from somewhere else
