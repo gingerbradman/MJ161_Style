@@ -16,7 +16,6 @@ public class MachineLogic : RenderedObject
 	{
 		ProductionTimer = Timer.CreateTimer(machine.ProductionTime, gameObject, true, false, false);
 		ProductionTimer.OnTimerEnded += OnTimerEnded;
-		
 	}
 
 	public void StartProduction()
