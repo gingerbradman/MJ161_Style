@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using	 UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
 public class CameraMoveZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -22,8 +21,9 @@ public class CameraMoveZone : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	{
 		while (true)
 		{
+			Debug.Log("A");
 			yield return new WaitForSeconds(MoveSpeed);
-			MainCamera.MoveCameraInDirection?.Invoke(MoveAmount);
+			MainCamera.MoveCameraInDirection.Invoke(MoveAmount);
 		}
 	}
 }

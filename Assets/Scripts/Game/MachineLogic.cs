@@ -5,7 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MachineLogic : MonoBehaviour
+public class MachineLogic : RenderedObject
 {
     event Global.Event MachineStarted;
 	Timer ProductionTimer;
@@ -18,6 +18,7 @@ public class MachineLogic : MonoBehaviour
 	{
 		ProductionTimer = Timer.CreateTimer(ProductionTime, gameObject, true, false, false);
 		ProductionTimer.OnTimerEnded += OnTimerEnded;
+		
 	}
 
 	public void StartProduction()
@@ -55,6 +56,12 @@ public class MachineLogic : MonoBehaviour
 		ProductionTimer.Begin();
 		InProduction = true;
 		MachineStarted?.Invoke();
+	}
+
+	public void OnClicked()
+	{
+		Global.DisplayInfo?.Invoke(this);
+		Debug.Log(this);
 	}
 
 	void OnTimerEnded()
