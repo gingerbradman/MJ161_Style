@@ -25,11 +25,17 @@ public class CustomerQueue : MonoBehaviour
 	{
 		CustomerFinished += OnCustomerFinished;
 	}
+
+	NPCLogic GetNPCLogic(GameObject obj) {
+		if (queueType == QueueType.CUSTOMER) return obj.GetComponent<CustomerLogic>();
+		return obj.GetComponent<VendorLogic>();
+	}
+
     void UpdateQueue(List<GameObject> list, Transform to)
 	{
 		for (int i = 0; i < list.Count; i++)
 		{
-			var l = list[i].GetComponent<CustomerLogic>();
+			var l = GetNPCLogic(list[i]);
 			if (l == null) continue;
 			list[i].transform.position = Vector2.MoveTowards(list[i].transform.position, to.position + new Vector3(0, minimum_distance * i), CustomerSpeed * Time.deltaTime);
 			if (Vector2.Distance(list[i].transform.position, to.position) < 1) {CustomerReachedDestination(list[i]);}
@@ -45,8 +51,15 @@ public class CustomerQueue : MonoBehaviour
 	{
 		for (int i = 0; i < count; i++)
 		{
-			var g = GameManager.Instance.CustomerPool.GetObject(transform);
-			if (queueType == QueueType.VENDOR) g = GameManager.Instance.VendorPool.GetObject(transform);
+			GameObject g;
+			if (queueType == QueueType.CUSTOMER)
+			{
+				g = GameManager.Instance.CustomerPool.GetObject(transform);
+			}
+			else
+			{
+				g = GameManager.Instance.VendorPool.GetObject(transform);
+			}
 			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * i);
 			queue.Add(g);
 		}
@@ -54,9 +67,11 @@ public class CustomerQueue : MonoBehaviour
 
 	void CustomerReachedDestination(GameObject obj)
 	{
-		if (queue.Contains(obj) && obj.GetComponent<CustomerLogic>().WaitTimer.isPaused == true)
+
+		var l = GetNPCLogic(obj);
+		if (queue.Contains(obj) && l.GetTimer().isPaused == true)
 		{
-			obj.GetComponent<CustomerLogic>().StartWaiting();
+			l.StartWaiting();
 		}
 		else if (leaving.Contains(obj))
 		{
