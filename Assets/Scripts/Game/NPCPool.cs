@@ -19,8 +19,7 @@ public class NPCPool : Singleton<NPCPool>
 	{
 		for (int i = 0; i < MaximumPoolCount; i++)
 		{
-			var g = Instantiate(ObjectToPool);
-			g.transform.SetParent(this.transform);
+			var g = Instantiate(ObjectToPool,this.transform);
 			g.SetActive(false);
 		}
 	}
@@ -56,8 +55,7 @@ public class NPCPool : Singleton<NPCPool>
 		{
 			for (int i = 0; i < MinimumPoolCount - transform.childCount; i++)
 			{
-				var g = Instantiate(ObjectToPool);
-				g.transform.SetParent(this.transform);
+				var g = Instantiate(ObjectToPool,this.transform);
 				g.SetActive(false);
 			}
 		}
