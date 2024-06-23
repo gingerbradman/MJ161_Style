@@ -9,6 +9,6 @@ public class MachineSlot : MonoBehaviour
     void Start()
     {
         machine.location = transform;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
