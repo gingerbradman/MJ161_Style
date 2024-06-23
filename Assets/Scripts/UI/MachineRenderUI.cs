@@ -13,22 +13,21 @@ public class MachineRenderUI : MachineLogic, IChoices
 	public GameObject popup{get => Popup;}
 	[SerializeField] GameObject Popup;
 
-
 	public void OnPopUpButtonPressed()
 	{
-		popup.SetActive(!popup.activeSelf);
+		//popup.SetActive(!popup.activeSelf);
 		UpdateText();
 	}
 
 	public void OnAcceptButtonPressed()
 	{
 		StartProduction();
-		popup.SetActive(!popup.activeSelf);
+		//popup.SetActive(!popup.activeSelf);
 	}
 
 	public void OnDeclineButtonPressed()
 	{
-		popup.SetActive(!popup.activeSelf);
+		//popup.SetActive(!popup.activeSelf);
 	}
 
 	void UpdateText()

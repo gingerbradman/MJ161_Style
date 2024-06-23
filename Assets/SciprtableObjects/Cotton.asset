@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4078a0af1e54d1a43ab7ea155993f845, type: 3}
-  m_Name: Settings 1
+  m_Script: {fileID: 11500000, guid: 2c98ce188b69619428504b47d3781e32, type: 3}
+  m_Name: Cotton
   m_EditorClassIdentifier: 
-  materials:
-  - {fileID: 11400000, guid: 9785ea67cc69b1547b8360145774e0fb, type: 2}
-  products: []
-  m_currency: 40
-  currency_text: {fileID: 0}
+  Name: Cotton
+  Icon: {fileID: -1659690340, guid: e09b33d15fcd48742aa60fb3982a649c, type: 3}
+  materialDescription: 
+  ExpectedValue: 10

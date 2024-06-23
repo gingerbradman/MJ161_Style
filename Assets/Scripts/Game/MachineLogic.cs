@@ -5,21 +5,32 @@ using UnityEngine;
 
 public class MachineLogic : RenderedObject
 {
-    public event Global.Event MachineStarted;
+	public event Global.Event MachineStarted;
 	protected Timer ProductionTimer;
 	public bool InProduction;
 	[SerializeField] protected MachineBase machine;
+	[SerializeField] SpriteRenderer In1;
+	[SerializeField] SpriteRenderer In2;
+	[SerializeField] SpriteRenderer Out;
 
 	void Start()
 	{
 		ProductionTimer = Timer.CreateTimer(machine.ProductionTime, gameObject, true, false, false);
 		ProductionTimer.OnTimerEnded += OnTimerEnded;
+		ProductionTimer.LoopTimer = false;
 		renderObject.GetComponent<Image>().sprite = machine.sprite;
+
+		In1.sprite = machine.materialsRequired[0].Icon;
+		if (machine.materialsRequired.Count > 1)
+		{
+			In2.sprite = machine.materialsRequired[1].Icon;
+		}
+		Out.sprite = machine.product.Icon;
 	}
 
 	public void StartProduction()
 	{
-		if (!CheckRequirementMet() || InProduction) {return; }
+		if (!CheckRequirementMet() || InProduction) { return; }
 		foreach (var mat in machine.materialsRequired)
 		{
 			foreach (var m in GameManager.Instance.player.materials)
@@ -65,7 +76,7 @@ public class MachineLogic : RenderedObject
 					break;
 				}
 			}
-			if (!hasMaterial) {return false;}
+			if (!hasMaterial) { return false; }
 		}
 
 		return true;
