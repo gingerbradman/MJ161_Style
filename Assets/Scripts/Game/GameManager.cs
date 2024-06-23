@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
-using System.Diagnostics;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -15,6 +11,7 @@ public class GameManager : Singleton<GameManager>
 	public TMP_Text quota_text;
 	public NPCPool CustomerPool;
 	public NPCPool VendorPool;
+	public CustomerQueue Customerqueue;
 	public List<Product> ProductUnlocked = new List<Product>();
 	public List<ItemMaterial> MaterialsSold = new List<ItemMaterial>();
 	public List<Sprite> CustomerSprites = new List<Sprite>();
@@ -28,9 +25,17 @@ public class GameManager : Singleton<GameManager>
 		player.currency_text = cash_text;
 		player.UpdateCurrencyText();
 		UpdateInventory();
-
 		quotaSystem.quota_text = quota_text;
 		quotaSystem.UpdateQuotaText();
+		CustomerQueue.CustomerFinished += OnCustomerFinished;
+	}
+
+	void OnCustomerFinished(GameObject customer)
+	{
+		if (Customerqueue.queue[0] == customer)
+		{
+			Debug.Log("AA");
+		}
 	}
 
 	public void UpdateInventory()

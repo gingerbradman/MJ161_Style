@@ -21,7 +21,6 @@ public class CameraMoveZone : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	{
 		while (true)
 		{
-			Debug.Log("A");
 			yield return new WaitForSeconds(MoveSpeed);
 			MainCamera.MoveCameraInDirection.Invoke(MoveAmount);
 		}

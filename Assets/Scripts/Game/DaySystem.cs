@@ -7,17 +7,16 @@ public class DaySystem : MonoBehaviour
 	public int Day;
 	public event Global.Event DayEnded;
 	public event Global.Event DayStarted;
-	public DayControl dayControl;
-	//public Timer DayTimer;
+	public Timer DayTimer;
 
-	// void Awake()
-	// {
-	// 	DayTimer.OnTimerEnded += EndDay;
-	// }
+	void Awake()
+	{
+		DayTimer.OnTimerEnded += EndDay;
+	}
 
 	public void StartDay()
 	{
-		// DayTimer.Begin();
+		DayTimer.Begin();
 		DayStarted?.Invoke();
 	}
 
