@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DaySystem : MonoBehaviour
 {
-	public int Day;
+	public int Day = 1;
 	public event Global.Event DayEnded;
 	public event Global.Event DayStarted;
 	public Timer DayTimer;
@@ -22,6 +22,8 @@ public class DaySystem : MonoBehaviour
 
 	public void EndDay()
 	{
+		if (DayTimer && !DayTimer.isPaused) {DayTimer.Stop();}
+		Day += 1;
 		DayEnded?.Invoke();
 	}
 }

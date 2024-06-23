@@ -42,11 +42,6 @@ public class CustomerQueue : MonoBehaviour
 		}
 	}
 
-	void Start()
-	{
-		SpawnCustomers(5);
-	}
-
 	public void SpawnCustomers(int count)
 	{
 		for (int i = 0; i < count; i++)

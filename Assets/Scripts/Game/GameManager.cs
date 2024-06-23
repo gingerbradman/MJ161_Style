@@ -19,9 +19,13 @@ public class GameManager : Singleton<GameManager>
 	public List<SpriteRenderer> productsSprites;
 	public List<Sprite> VendorSprites = new List<Sprite>();
 	public GameObject slotPrefab;
+	public List<DayControl> Days = new List<DayControl>();
+
+	DayControl current_day;
 	public DayControl CurrentDay
 	{
 		set => OnDaySet(value);
+		get => current_day;
 	}
 	int currentCustomerCount;
 	protected override void OnAwake()
@@ -33,18 +37,37 @@ public class GameManager : Singleton<GameManager>
 		quotaSystem.quota_text = quota_text;
 		quotaSystem.UpdateQuotaText();
 		CustomerQueue.CustomerFinished += OnCustomerFinished;
+		daySystem.DayStarted += OnDayStarted;
+	}
+
+	void Start()
+	{
+		OnDayStarted();
+	}
+
+	void OnDayStarted()
+	{
+		if (Days.Count == 0)
+		{
+			//win
+		}
+		CurrentDay = Days[0];
+		Days.RemoveAt(0);
 	}
 
 	void OnDaySet(DayControl day)
 	{
-
+		current_day = day;
+		currentCustomerCount = day.CustomerCount;
+		quotaSystem.UpdateQuota(day.Quota);
+		Customerqueue.SpawnCustomers(currentCustomerCount);
 	}
 
 	void OnCustomerFinished(GameObject customer)
 	{
 		if (Customerqueue.queue[0] == customer)
 		{
-			Debug.Log("AA");
+			daySystem.EndDay();
 		}
 	}
 
