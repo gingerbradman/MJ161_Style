@@ -9,6 +9,7 @@ public static class Global
 	public delegate void Action(object o);
 	public static Action DisplayInfo;
 	public const string CANVAS_GROUP = "Canvas";
+	public const string CUSTOMER_POOL_GROUP = "CustomerPool";
 
 	public static Dictionary<T, int> ClampItems<T>(List<T> list)
 	{

@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UIElements;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class CustomerLogic : RenderedObject
+public class CustomerLogic : RenderedObject, IPooled
 {
-
+	public Customer customer;
+	public void Reset()
+	{
+		customer = null;
+		renderObject.transform.SetParent(this.transform);
+	}
 }
