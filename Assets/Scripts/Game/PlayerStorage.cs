@@ -67,8 +67,8 @@ public class PlayerStorage : ScriptableObject
 				{
 					int value = (what as Product).productValue;
 					UpdateCurrency(GetCurrency() + value);
-					GameManager.Instance.UpdateInventory();
 					products.Remove(what as Product);
+					GameManager.Instance.UpdateInventory();
 					res = true;
 				}
 				break;
