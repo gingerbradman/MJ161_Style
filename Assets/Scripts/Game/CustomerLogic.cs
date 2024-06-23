@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class CustomerLogic : RenderedObject, IPooled
+public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 {
 	public Product productWanted;
 	const float MINIMUM_PATIENT_TIME = 10;
@@ -36,6 +36,11 @@ public class CustomerLogic : RenderedObject, IPooled
 		if (GameManager.Instance.CustomerSprites.Count > 0) renderObject.GetComponent<Image>().sprite = GameManager.Instance.CustomerSprites[Random.Range(0,GameManager.Instance.CustomerSprites.Count)];
 		if (GameManager.Instance.ProductUnlocked.Count > 0) productWanted = GameManager.Instance.ProductUnlocked[Random.Range(0, GameManager.Instance.ProductUnlocked.Count)];
 		WantedRender.sprite = productWanted.Icon;
+	}
+
+	public Timer GetTimer()
+	{
+		return WaitTimer;
 	}
 
 	public void StartWaiting()

@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
 	public List<Sprite> CustomerSprites = new List<Sprite>();
 	public List<SpriteRenderer> materialsSprites;
 	public List<SpriteRenderer> productsSprites;
+	public List<Sprite> VendorSprites = new List<Sprite>();
 	protected override void OnAwake()
 	{
 		player = ScriptableObject.Instantiate(player);
