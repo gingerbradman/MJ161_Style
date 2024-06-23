@@ -15,10 +15,7 @@ public class PlayerStorage : ScriptableObject
 	public List<Product> products = new List<Product>();
 	public int m_currency = 40;
 	public TMP_Text currency_text;
-	public List<SpriteRenderer> materialsSprites;
-	public List<SpriteRenderer> productsSprites;
-
-
+	
 	public void Append(object what)
 	{
 		switch (what)

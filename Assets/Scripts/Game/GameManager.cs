@@ -25,8 +25,6 @@ public class GameManager : Singleton<GameManager>
 		player.currency_text = cash_text;
 		player.UpdateCurrencyText();
 		UpdateInventory();
-		player.materialsSprites = materialsSprites;
-		player.productsSprites = productsSprites;
 
 		quotaSystem.quota_text = quota_text;
 		quotaSystem.UpdateQuotaText();
