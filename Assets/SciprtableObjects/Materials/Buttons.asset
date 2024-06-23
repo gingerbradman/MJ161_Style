@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Buttons
   m_EditorClassIdentifier: 
   Name: Buttons
-  Icon: {fileID: 0}
+  Icon: {fileID: 1218331846, guid: e09b33d15fcd48742aa60fb3982a649c, type: 3}
   materialDescription: 
   ExpectedValue: 0

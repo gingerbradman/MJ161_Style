@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class VendorLogic : RenderedObject, IPooled, NPCLogic
 {
-	public Product productWanted;
+	public ItemMaterial sellingMaterial;
 	const float MINIMUM_PATIENT_TIME = 10;
 	const float MAXIMUM_PATIENT_TIME = 30;
 	public float PatientTime
@@ -25,7 +25,7 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 		transform.position = Vector3.zero;
 		renderObject.transform.position = Vector3.zero;
 		renderObject.transform.SetParent(this.transform);
-		productWanted = null;
+		sellingMaterial = null;
 		renderObject.GetComponent<Image>().sprite = null;
 		WantedRender.sprite = null;
 		WantedRender.gameObject.SetActive(false);
@@ -34,8 +34,8 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 	public void DecorateVendor()
 	{
 		if (GameManager.Instance.CustomerSprites.Count > 0) renderObject.GetComponent<Image>().sprite = GameManager.Instance.VendorSprites[Random.Range(0,GameManager.Instance.VendorSprites.Count)];
-		//if (GameManager.Instance.ProductUnlocked.Count > 0) productWanted = GameManager.Instance.ProductUnlocked[Random.Range(0, GameManager.Instance.ProductUnlocked.Count)];
-		//WantedRender.sprite = productWanted.Icon;
+		if (GameManager.Instance.MaterialsSold.Count > 0) sellingMaterial = GameManager.Instance.MaterialsSold[Random.Range(0, GameManager.Instance.MaterialsSold.Count)];
+		WantedRender.sprite = sellingMaterial.Icon;
 	}
 
 	public Timer GetTimer()

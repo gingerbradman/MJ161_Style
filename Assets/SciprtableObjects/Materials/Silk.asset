@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Silk
   m_EditorClassIdentifier: 
   Name: Silk
-  Icon: {fileID: 0}
+  Icon: {fileID: -700235496, guid: e09b33d15fcd48742aa60fb3982a649c, type: 3}
   materialDescription: 
   ExpectedValue: 0
