@@ -9,14 +9,15 @@ public interface IPooled
 	void Reset();
 }
 
-public class NPCPool : Singleton<NPCPool>
+public class NPCPool : MonoBehaviour
 {
 	public int MaximumPoolCount;
 	public int MinimumPoolCount;
 	public GameObject ObjectToPool;
 
-	protected override void OnAwake()
+	void Awake()
 	{
+		if (ObjectToPool == null) return;
 		for (int i = 0; i < MaximumPoolCount; i++)
 		{
 			var g = Instantiate(ObjectToPool,this.transform);
@@ -24,15 +25,13 @@ public class NPCPool : Singleton<NPCPool>
 		}
 	}
 
-	public GameObject GetObject()
+	public GameObject GetObject(Transform attachTo)
 	{
 		GameObject g;
-		if (transform.childCount > 0)
-		{
-			g = transform.GetChild(0).gameObject;
-		}
-		g = Instantiate(ObjectToPool);
+		if (transform.childCount > 0) {g = transform.GetChild(0).gameObject;}
+		else g = Instantiate(ObjectToPool);
 		g.SetActive(true);
+		g.transform.SetParent(attachTo);
 		return g;
 	}
 
@@ -47,6 +46,7 @@ public class NPCPool : Singleton<NPCPool>
 
 	void Update()
 	{
+		if (ObjectToPool == null) return;
 		if (transform.childCount > 0 && transform.childCount > MaximumPoolCount)
 		{
 			Destroy(transform.GetChild(0));
