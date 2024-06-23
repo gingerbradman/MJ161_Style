@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8486921d174599e4f9b27b2b3e724c29, type: 3}
+  m_Name: HatMachine
+  m_EditorClassIdentifier: 
+  materialsRequired:
+  - {fileID: 11400000, guid: ce306145ab46921438ca3f587f4ae556, type: 2}
+  - {fileID: 11400000, guid: 28a5bf3cfd8ae624482d40d47f81b18d, type: 2}
+  product: {fileID: 11400000, guid: f047777b7ba8edf4d9ffaba390d3262b, type: 2}
+  ProductionTime: 3
+  sprite: {fileID: 461232353, guid: a2c3fa4778d293d4eba6e7ae5623025e, type: 3}

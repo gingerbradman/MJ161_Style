@@ -9,4 +9,5 @@ public class MachineBase : ScriptableObject
 	public Product product;
 	public float ProductionTime = 3f;
 	public Sprite sprite;
+	public Transform location;
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8486921d174599e4f9b27b2b3e724c29, type: 3}
+  m_Name: ShirtMachine
+  m_EditorClassIdentifier: 
+  materialsRequired:
+  - {fileID: 11400000, guid: 4e9fe1b81d58a0c428c5e42a7a20f733, type: 2}
+  product: {fileID: 11400000, guid: 266c507c8955c54488e90865c2d8e938, type: 2}
+  ProductionTime: 3
+  sprite: {fileID: 461232353, guid: a2c3fa4778d293d4eba6e7ae5623025e, type: 3}

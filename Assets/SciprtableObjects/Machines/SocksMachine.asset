@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8486921d174599e4f9b27b2b3e724c29, type: 3}
+  m_Name: SocksMachine
+  m_EditorClassIdentifier: 
+  materialsRequired:
+  - {fileID: 11400000, guid: 4e9fe1b81d58a0c428c5e42a7a20f733, type: 2}
+  product: {fileID: 11400000, guid: 55f5d3cbea21c3547be5c8ab0c267ef7, type: 2}
+  ProductionTime: 3
+  sprite: {fileID: -1395125190, guid: 880447e04c6c7fb4a9478f9a6ea4c6cb, type: 3}

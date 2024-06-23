@@ -60,4 +60,9 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 	{
 		CustomerQueue.CustomerFinished?.Invoke(gameObject);
 	}
+
+	public void OnClick()
+	{
+		//if (GameManager.Instance.player.Remove(productWanted)) DeliverProduct();
+	}
 }

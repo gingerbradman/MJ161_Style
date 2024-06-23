@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEditor.UI;
 
 public class VendorLogic : RenderedObject, IPooled, NPCLogic
 {
@@ -58,5 +59,10 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 	public void DeliverProduct()
 	{
 		CustomerQueue.CustomerFinished?.Invoke(gameObject);
+	}
+
+	public void OnClick()
+	{
+		//if (GameManager.Instance.player.Append(sellingMaterial)) DeliverProduct();
 	}
 }
