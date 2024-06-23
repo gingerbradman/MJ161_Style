@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4078a0af1e54d1a43ab7ea155993f845, type: 3}
-  m_Name: Settings 1
+  m_Script: {fileID: 11500000, guid: 8486921d174599e4f9b27b2b3e724c29, type: 3}
+  m_Name: ShirtMachine
   m_EditorClassIdentifier: 
-  materials:
+  materialsRequired:
   - {fileID: 11400000, guid: 9785ea67cc69b1547b8360145774e0fb, type: 2}
-  products: []
-  m_currency: 40
-  currency_text: {fileID: 0}
+  product: {fileID: 11400000, guid: 266c507c8955c54488e90865c2d8e938, type: 2}
+  ProductionTime: 3
+  sprite: {fileID: -1395125190, guid: 880447e04c6c7fb4a9478f9a6ea4c6cb, type: 3}

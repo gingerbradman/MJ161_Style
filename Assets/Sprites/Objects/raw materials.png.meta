@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16b12e28f9f552d45a2fb9e6de59ff92
+guid: e09b33d15fcd48742aa60fb3982a649c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,31 +101,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -140,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clothing Icons_0
+      name: raw materials_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27bb5af24fb41fb4f927dcd8d33522ad
-      internalID: 652001240
+      spriteID: 878057efb05f6234da9fcbf7e8da64f3
+      internalID: -1659690340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clothing Icons_1
+      name: raw materials_1
       rect:
         serializedVersion: 2
         x: 16
@@ -175,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6d5e2fe56478f489315d0168929eab
-      internalID: 1630908921
+      spriteID: 212a2f2e179e70240be81e5ff1cf49e3
+      internalID: 211763388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clothing Icons_2
+      name: raw materials_2
       rect:
         serializedVersion: 2
         x: 32
@@ -196,35 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0c981f4112dc0d459c5e9154d3c5f5a
-      internalID: -1211070398
+      spriteID: 042afa1e126be2f479aeafb2aa7a64d2
+      internalID: -700235496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clothing Icons_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7eb2bf18d5b974f4a892f9e2929bff46
-      internalID: 1945366141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clothing Icons_4
+      name: raw materials_3
       rect:
         serializedVersion: 2
         x: 0
@@ -238,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c632500907b6fe347893e620f7a0866b
-      internalID: 528777632
+      spriteID: 548b321b4535da4439df390112ccebc3
+      internalID: 530346107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clothing Icons_5
+      name: raw materials_4
       rect:
         serializedVersion: 2
         x: 16
@@ -259,50 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c0d73b05356eca4c8a8f0276bf119d2
-      internalID: 857380207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clothing Icons_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdcf53cce06fec942a09193f3e60cf28
-      internalID: 1752900668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clothing Icons_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c4b0c4d7bc095746b52f0c9834f0376
-      internalID: -694866933
+      spriteID: 0f7e7dde5868f6f4284241581d083a8b
+      internalID: 1218331846
       vertices: []
       indices: 
       edges: []
@@ -310,7 +223,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7083c753eda4cf6409af5ab289183780
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -318,14 +231,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Clothing Icons_6: 1752900668
-      Clothing Icons_0: 652001240
-      Clothing Icons_4: 528777632
-      Clothing Icons_7: -694866933
-      Clothing Icons_3: 1945366141
-      Clothing Icons_5: 857380207
-      Clothing Icons_2: -1211070398
-      Clothing Icons_1: 1630908921
+      raw materials_3: 530346107
+      raw materials_0: -1659690340
+      raw materials_2: -700235496
+      raw materials_4: 1218331846
+      raw materials_1: 211763388
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

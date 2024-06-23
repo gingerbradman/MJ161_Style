@@ -14,8 +14,10 @@ public class GameManager : Singleton<GameManager>
 	public NPCPool CustomerPool;
 	public NPCPool VendorPool;
 	public List<Product> ProductUnlocked = new List<Product>();
+	public List<Material> MaterialsSold = new List<Material>();
 	public List<Sprite> CustomerSprites = new List<Sprite>();
 	public List<Sprite> VendorSprites = new List<Sprite>();
+
 	protected override void OnAwake()
 	{
 		player = ScriptableObject.Instantiate(player);

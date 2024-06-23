@@ -17,6 +17,7 @@ public class PlayerStorage : ScriptableObject
 	public TMP_Text currency_text;
 
 
+
 	public void Append(object what)
 	{
 		switch (what)
@@ -53,6 +54,8 @@ public class PlayerStorage : ScriptableObject
 	{
 		currency_text.text = ""+m_currency;
 	}
+
+
 }
 
 
