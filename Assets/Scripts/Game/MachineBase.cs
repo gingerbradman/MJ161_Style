@@ -10,4 +10,5 @@ public class MachineBase : ScriptableObject
 	public float ProductionTime = 3f;
 	public Sprite sprite;
 	public Transform location;
+	public int cost;
 }

@@ -17,3 +17,5 @@ MonoBehaviour:
   product: {fileID: 11400000, guid: 55f5d3cbea21c3547be5c8ab0c267ef7, type: 2}
   ProductionTime: 3
   sprite: {fileID: -1395125190, guid: 880447e04c6c7fb4a9478f9a6ea4c6cb, type: 3}
+  location: {fileID: 0}
+  cost: 50
