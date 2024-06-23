@@ -13,6 +13,13 @@ public class CustomerQueue : MonoBehaviour
 	public Transform Exit;
 	public float CustomerSpeed = 50f;
 	public static Action<GameObject> CustomerFinished;
+	public enum QueueType
+	{
+		CUSTOMER,
+		VENDOR
+	};
+
+	public QueueType queueType;
 
 	void Awake()
 	{
@@ -39,6 +46,7 @@ public class CustomerQueue : MonoBehaviour
 		for (int i = 0; i < count; i++)
 		{
 			var g = GameManager.Instance.CustomerPool.GetObject(transform);
+			if (queueType == QueueType.VENDOR) g = GameManager.Instance.VendorPool.GetObject(transform);
 			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * i);
 			queue.Add(g);
 		}
@@ -46,8 +54,22 @@ public class CustomerQueue : MonoBehaviour
 
 	void CustomerReachedDestination(GameObject obj)
 	{
-		if (queue.Contains(obj) && obj.GetComponent<CustomerLogic>().WaitTimer.isPaused == true) {obj.GetComponent<CustomerLogic>().StartWaiting();}
-		else if (leaving.Contains(obj)) {leaving.Remove(obj); GameManager.Instance.CustomerPool.ReturnObject(obj);}
+		if (queue.Contains(obj) && obj.GetComponent<CustomerLogic>().WaitTimer.isPaused == true)
+		{
+			obj.GetComponent<CustomerLogic>().StartWaiting();
+		}
+		else if (leaving.Contains(obj))
+		{
+			leaving.Remove(obj);
+			if (queueType == QueueType.CUSTOMER)
+			{
+				GameManager.Instance.CustomerPool.ReturnObject(obj);
+			}
+			else
+			{
+				GameManager.Instance.VendorPool.ReturnObject(obj);
+			}
+		}
 	}
 
 	void Update()

@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
 	public DaySystem daySystem;
 	public QuotaSystem quotaSystem;
 	public NPCPool CustomerPool;
+	public NPCPool VendorPool;
 	public List<Product> ProductUnlocked = new List<Product>();
 	public List<Sprite> CustomerSprites = new List<Sprite>();
 	protected override void OnAwake()

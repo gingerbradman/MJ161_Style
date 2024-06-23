@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eb20b6a06188f8c47827b5c60559d972
+guid: 16b12e28f9f552d45a2fb9e6de59ff92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f5a9d1ccb4cc7d4798a14ee45e529cc
-      internalID: -789720826
+      spriteID: 27bb5af24fb41fb4f927dcd8d33522ad
+      internalID: 652001240
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38658e30cac68fe46b8aeb517aa0fc8d
-      internalID: -1231682878
+      spriteID: 5b6d5e2fe56478f489315d0168929eab
+      internalID: 1630908921
       vertices: []
       indices: 
       edges: []
@@ -196,14 +196,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 549bf779d35b44d4c805f986c47d9843
-      internalID: -259535924
+      spriteID: e0c981f4112dc0d459c5e9154d3c5f5a
+      internalID: -1211070398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: Clothing Icons_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb2bf18d5b974f4a892f9e2929bff46
+      internalID: 1945366141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clothing Icons_4
       rect:
         serializedVersion: 2
         x: 0
@@ -217,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a0d51c9f13aed348bd0a40717752ab6
-      internalID: 1363654778
+      spriteID: c632500907b6fe347893e620f7a0866b
+      internalID: 528777632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clothing Icons_4
+      name: Clothing Icons_5
       rect:
         serializedVersion: 2
         x: 16
@@ -238,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de0336bb02dea444dae8d2d50e579fdf
-      internalID: -1104685384
+      spriteID: 0c0d73b05356eca4c8a8f0276bf119d2
+      internalID: 857380207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clothing Icons_5
+      name: Clothing Icons_6
       rect:
         serializedVersion: 2
         x: 32
@@ -259,8 +280,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36dd683bbebcc004a8599c055f728de6
-      internalID: -1009515125
+      spriteID: fdcf53cce06fec942a09193f3e60cf28
+      internalID: 1752900668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clothing Icons_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4b0c4d7bc095746b52f0c9834f0376
+      internalID: -694866933
       vertices: []
       indices: 
       edges: []
@@ -268,7 +310,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 70fa9ea99b9fdcc45a9932133691159f
+    spriteID: 7083c753eda4cf6409af5ab289183780
     internalID: 0
     vertices: []
     indices: 
@@ -276,12 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Clothing Icons_0: -789720826
-      Clothing Icons_4: -1104685384
-      Clothing Icons_3: 1363654778
-      Clothing Icons_5: -1009515125
-      Clothing Icons_2: -259535924
-      Clothing Icons_1: -1231682878
+      Clothing Icons_6: 1752900668
+      Clothing Icons_0: 652001240
+      Clothing Icons_4: 528777632
+      Clothing Icons_7: -694866933
+      Clothing Icons_3: 1945366141
+      Clothing Icons_5: 857380207
+      Clothing Icons_2: -1211070398
+      Clothing Icons_1: 1630908921
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

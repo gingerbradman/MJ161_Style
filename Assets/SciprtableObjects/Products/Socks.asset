@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Socks
   m_EditorClassIdentifier: 
   Name: Socks
-  Icon: {fileID: -1009515125, guid: eb20b6a06188f8c47827b5c60559d972, type: 3}
+  Icon: {fileID: 1752900668, guid: 16b12e28f9f552d45a2fb9e6de59ff92, type: 3}
   productDescription: 
   productValue: 20

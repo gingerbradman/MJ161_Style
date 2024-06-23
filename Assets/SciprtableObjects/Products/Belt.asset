@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 190f3e7539728f846aaf1bc128fece6f, type: 3}
-  m_Name: Shirt
+  m_Name: Belt
   m_EditorClassIdentifier: 
-  Name: Shirt
-  Icon: {fileID: 652001240, guid: 16b12e28f9f552d45a2fb9e6de59ff92, type: 3}
+  Name: Belt
+  Icon: {fileID: 857380207, guid: 16b12e28f9f552d45a2fb9e6de59ff92, type: 3}
   productDescription: 
-  productValue: 25
+  productValue: 0
