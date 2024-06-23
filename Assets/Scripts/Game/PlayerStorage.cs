@@ -7,51 +7,81 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMOD;
 
 [CreateAssetMenu]
 public class PlayerStorage : ScriptableObject
 {
-    public List<ItemMaterial> materials = new List<ItemMaterial>();
+	public List<ItemMaterial> materials = new List<ItemMaterial>();
 	public List<Product> products = new List<Product>();
+	public int maxInventory = 13;
 	public int m_currency = 40;
-	public int GetCurrency(){return m_currency;}
+	public int GetCurrency() { return m_currency; }
 	public TMP_Text currency_text;
-	
-	public void Append(object what)
+
+	public bool Append(object what)
 	{
+		bool res = false;
 		switch (what)
 		{
 			case ItemMaterial:
-				materials.Add(what as ItemMaterial);
+				int value = (what as ItemMaterial).ExpectedValue;
+				if (value < GetCurrency() && materials.Count < maxInventory)
+				{
+					UpdateCurrency(GetCurrency() - value);
+					materials.Add(what as ItemMaterial);
+					res = true;
+				}
 				break;
+
 			case Product:
-				products.Add(what as Product);
+				if (products.Count < maxInventory)
+				{
+					products.Add(what as Product);
+					res = true;
+				}
+
 				break;
 		}
+
+		return res;
 	}
 
-	public void Remove(object what)
+	public bool Remove(object what)
 	{
+		bool res = false;
 		switch (what)
 		{
 			case ItemMaterial:
-				materials.Remove(what as ItemMaterial);
+				if (materials.Contains(what as ItemMaterial))
+				{
+					materials.Remove(what as ItemMaterial);
+					res = true;
+				}
 				break;
 			case Product:
-				products.Remove(what as Product);
+				if (products.Contains(what as Product))
+				{
+					int value = (what as Product).productValue;
+					UpdateCurrency(GetCurrency() + value);
+					products.Remove(what as Product);
+					res = true;
+				}
 				break;
 		}
+
+		return res;
 	}
 
 	public void UpdateCurrency(int x)
 	{
-		m_currency += x;
+		m_currency = x;
 		UpdateCurrencyText();
 	}
 
 	public void UpdateCurrencyText()
 	{
-		currency_text.text = ""+m_currency;
+		currency_text.text = "" + m_currency;
 	}
 
 

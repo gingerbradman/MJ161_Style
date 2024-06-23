@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using System.Diagnostics;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -19,6 +21,7 @@ public class GameManager : Singleton<GameManager>
 	public List<SpriteRenderer> materialsSprites;
 	public List<SpriteRenderer> productsSprites;
 	public List<Sprite> VendorSprites = new List<Sprite>();
+	public GameObject slotPrefab;
 	protected override void OnAwake()
 	{
 		player = ScriptableObject.Instantiate(player);
@@ -38,17 +41,31 @@ public class GameManager : Singleton<GameManager>
 
 	public void UpdateMaterialsInventory()
 	{
-		for(int i = 0; i<=player.materials.Count; i++)
+		for (int i = 0; i < materialsSprites.Count; i++)
 		{
-			materialsSprites[i].sprite = player.materials[i].Icon;
+			Transform transform = materialsSprites[i].gameObject.transform;
+			if(transform.childCount > 0){Destroy(transform.GetChild(0).gameObject);}
+		}
+		
+		for (int i = 0; i < player.materials.Count; i++)
+		{
+			GameObject cloneSlot = Instantiate(slotPrefab, materialsSprites[i].gameObject.transform);
+			cloneSlot.GetComponent<SpriteRenderer>().sprite = player.materials[i].Icon;
 		}
 	}
 
 	public void UpdateProductsInventory()
 	{
-		for(int i = 0; i<=player.products.Count; i++)
+		for (int i = 0; i < productsSprites.Count; i++)
 		{
-			productsSprites[i].sprite = player.products[i].Icon;
+			Transform transform = productsSprites[i].gameObject.transform;
+			if(transform.childCount > 0){Destroy(transform.GetChild(0).gameObject);}
+		}
+		
+		for (int i = 0; i < player.products.Count; i++)
+		{
+			GameObject cloneSlot = Instantiate(slotPrefab, productsSprites[i].gameObject.transform);
+			cloneSlot.GetComponent<SpriteRenderer>().sprite = player.products[i].Icon;
 		}
 	}
 

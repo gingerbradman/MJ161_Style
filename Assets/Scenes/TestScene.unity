@@ -483,6 +483,7 @@ MonoBehaviour:
   CustomerPool: {fileID: 1200743425}
   VendorPool: {fileID: 0}
   ProductUnlocked: []
+  MaterialsSold: []
   CustomerSprites:
   - {fileID: 21300000, guid: d204fe433d8ea41408c15ac1c16e4b84, type: 3}
   - {fileID: 1109313571, guid: aaac56773427f6b46bf08e5a54f9fbf6, type: 3}
@@ -518,7 +519,7 @@ MonoBehaviour:
   - {fileID: 1144228651}
   - {fileID: 528834298}
   VendorSprites: []
-  MaterialsSold: []
+  slotPrefab: {fileID: 7689909731420134481, guid: acf4136c9c7b3d24380d65269753ecff, type: 3}
 --- !u!114 &285147124
 MonoBehaviour:
   m_ObjectHideFlags: 0
