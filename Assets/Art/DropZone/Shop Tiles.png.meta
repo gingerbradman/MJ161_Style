@@ -388,6 +388,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Shop Tiles_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cbe6f02db2864c4e8ab26228940b8bf
+      internalID: -473481154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -405,6 +426,7 @@ TextureImporter:
       Shop Tiles_7: -1694255539
       Shop Tiles_5: 1509508017
       Shop Tiles_9: -1412722092
+      Shop Tiles_13: -473481154
       Shop Tiles_10: 598212381
       Shop Tiles_11: 1086621793
       Shop Tiles_12: -486689998
