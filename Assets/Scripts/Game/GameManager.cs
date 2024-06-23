@@ -19,6 +19,11 @@ public class GameManager : Singleton<GameManager>
 	public List<SpriteRenderer> productsSprites;
 	public List<Sprite> VendorSprites = new List<Sprite>();
 	public GameObject slotPrefab;
+	public DayControl CurrentDay
+	{
+		set => OnDaySet(value);
+	}
+	int currentCustomerCount;
 	protected override void OnAwake()
 	{
 		player = ScriptableObject.Instantiate(player);
@@ -28,6 +33,11 @@ public class GameManager : Singleton<GameManager>
 		quotaSystem.quota_text = quota_text;
 		quotaSystem.UpdateQuotaText();
 		CustomerQueue.CustomerFinished += OnCustomerFinished;
+	}
+
+	void OnDaySet(DayControl day)
+	{
+
 	}
 
 	void OnCustomerFinished(GameObject customer)
