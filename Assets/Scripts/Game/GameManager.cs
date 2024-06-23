@@ -15,15 +15,16 @@ public class GameManager : Singleton<GameManager>
 	public NPCPool VendorPool;
 	public List<Product> ProductUnlocked = new List<Product>();
 	public List<Sprite> CustomerSprites = new List<Sprite>();
-
 	public List<SpriteRenderer> materialsSprites;
 	public List<SpriteRenderer> productsSprites;
-
 	protected override void OnAwake()
 	{
 		player = ScriptableObject.Instantiate(player);
 		player.currency_text = cash_text;
 		player.UpdateCurrencyText();
+		UpdateInventory();
+		player.materialsSprites = materialsSprites;
+		player.productsSprites = productsSprites;
 
 		quotaSystem.quota_text = quota_text;
 		quotaSystem.UpdateQuotaText();

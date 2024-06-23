@@ -909,6 +909,34 @@ MonoBehaviour:
   - {fileID: -692147027, guid: aaac56773427f6b46bf08e5a54f9fbf6, type: 3}
   - {fileID: 1329201925, guid: aaac56773427f6b46bf08e5a54f9fbf6, type: 3}
   - {fileID: -1143910348, guid: aaac56773427f6b46bf08e5a54f9fbf6, type: 3}
+  materialsSprites:
+  - {fileID: 1936750831}
+  - {fileID: 1785253755}
+  - {fileID: 1041741227}
+  - {fileID: 1925729198}
+  - {fileID: 1222261620}
+  - {fileID: 454682198}
+  - {fileID: 483003185}
+  - {fileID: 421814662}
+  - {fileID: 1470137885}
+  - {fileID: 881228378}
+  - {fileID: 1522264591}
+  - {fileID: 1290815310}
+  - {fileID: 901435390}
+  productsSprites:
+  - {fileID: 882137400}
+  - {fileID: 786099516}
+  - {fileID: 1317518185}
+  - {fileID: 1574298828}
+  - {fileID: 1434056116}
+  - {fileID: 284035713}
+  - {fileID: 1609143572}
+  - {fileID: 1406894058}
+  - {fileID: 191481713}
+  - {fileID: 1043217614}
+  - {fileID: 1829512801}
+  - {fileID: 1144228651}
+  - {fileID: 528834298}
 --- !u!114 &285147124
 MonoBehaviour:
   m_ObjectHideFlags: 0
