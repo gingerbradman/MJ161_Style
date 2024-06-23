@@ -14,6 +14,7 @@ public class PlayerStorage : ScriptableObject
     public List<ItemMaterial> materials = new List<ItemMaterial>();
 	public List<Product> products = new List<Product>();
 	public int m_currency = 40;
+	public int GetCurrency(){return m_currency;}
 	public TMP_Text currency_text;
 	
 	public void Append(object what)
