@@ -38,6 +38,7 @@ public class MachineLogic : RenderedObject
 				if (m == mat)
 				{
 					GameManager.Instance.player.materials.Remove(m);
+					GameManager.Instance.UpdateInventory();
 					break;
 				}
 			}
@@ -58,6 +59,7 @@ public class MachineLogic : RenderedObject
 	{
 		InProduction = false;
 		GameManager.Instance.player.Append(machine.product);
+		GameManager.Instance.UpdateInventory();
 	}
 
 	bool CheckRequirementMet()
