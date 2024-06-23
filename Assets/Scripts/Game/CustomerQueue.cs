@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomerQueue : MonoBehaviour
@@ -12,7 +12,7 @@ public class CustomerQueue : MonoBehaviour
 	public Transform MoveFrom;
 	public Transform Exit;
 	public float CustomerSpeed = 50f;
-	public static Global.Event CustomerFinished;
+	public static Action<GameObject> CustomerFinished;
 
 	void Awake()
 	{
@@ -56,9 +56,9 @@ public class CustomerQueue : MonoBehaviour
 		if (leaving.Count > 0 && Exit.position.y - leaving[0].transform.position.y < 1) UpdateQueue(leaving, Exit);
 	}
 
-	void OnCustomerFinished()
+	void OnCustomerFinished(GameObject gameObject)
 	{
-		if (queue.Count == 0) return;
+		if (queue.Count == 0 || gameObject != queue[0]) return;
 		var q = queue[0];
 		queue.Remove(q);
 		leaving.Add(q);

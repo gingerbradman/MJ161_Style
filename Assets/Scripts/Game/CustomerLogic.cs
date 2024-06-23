@@ -12,6 +12,7 @@ public class CustomerLogic : RenderedObject, IPooled
 	}
 	public Image WantedRender;
 	public Timer WaitTimer;
+	public GameObject Popup;
 
 	public override void Awake()
 	{
@@ -46,6 +47,11 @@ public class CustomerLogic : RenderedObject, IPooled
 	void OnPatientRanOut()
 	{
 		WantedRender.gameObject.SetActive(false);
-		CustomerQueue.CustomerFinished?.Invoke();
+		CustomerQueue.CustomerFinished?.Invoke(gameObject);
+	}
+
+	public void DeliverProduct()
+	{
+		CustomerQueue.CustomerFinished?.Invoke(gameObject);
 	}
 }
