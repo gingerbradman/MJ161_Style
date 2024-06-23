@@ -5,13 +5,17 @@ using System.Linq;
 using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 [CreateAssetMenu]
 public class PlayerStorage : ScriptableObject
 {
     public List<ItemMaterial> materials = new List<ItemMaterial>();
 	public List<Product> products = new List<Product>();
-	public int Currency = 10;
+	public int m_currency = 40;
+	public TMP_Text currency_text;
+
 
 	public void Append(object what)
 	{
@@ -37,6 +41,17 @@ public class PlayerStorage : ScriptableObject
 				products.Remove(what as Product);
 				break;
 		}
+	}
+
+	public void UpdateCurrency(int x)
+	{
+		m_currency += x;
+		UpdateCurrencyText();
+	}
+
+	public void UpdateCurrencyText()
+	{
+		currency_text.text = ""+m_currency;
 	}
 }
 
