@@ -15,6 +15,7 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 	public SpriteRenderer SpeechBubble;
 	public TMP_Text cost_text;
 	public Timer WaitTimer;
+	public bool received;
 	public override void Awake()
 	{
 		base.Awake();
@@ -32,6 +33,7 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 		WantedRender.gameObject.SetActive(false);
 		cost_text.text = "";
 		cost_text.gameObject.SetActive(false);
+		received = false;
 	}
 
 	public void DecorateVendor()
@@ -65,14 +67,17 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 
 	public void DeliverProduct()
 	{
+		GameManager.Instance.player.Append(sellingMaterial);
+		received = true;
 		WantedRender.gameObject.SetActive(false);
 		cost_text.gameObject.SetActive(false);
+		WaitTimer.Stop();
 		CustomerQueue.CustomerFinished?.Invoke(gameObject);
 	}
 
 	public void OnClick()
 	{
-		if (GameManager.Instance.player.Append(sellingMaterial) && !WaitTimer.isPaused)
+		if (GameManager.Instance.player.GetCurrency() >= sellingMaterial.ExpectedValue && GameManager.Instance.player.materials.Count < GameManager.Instance.player.maxInventory && !WaitTimer.isPaused)
 		{
 			DeliverProduct();
 		}

@@ -43,7 +43,6 @@ public class PlayerStorage : ScriptableObject
 					GameManager.Instance.UpdateInventory();
 					res = true;
 				}
-
 				break;
 		}
 

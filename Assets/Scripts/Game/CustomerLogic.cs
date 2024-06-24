@@ -31,6 +31,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 		renderObject.GetComponent<Image>().sprite = null;
 		WantedRender.sprite = null;
 		WantedRender.gameObject.SetActive(false);
+		Received = false;
 	}
 
 	public void DecorateCustomer()
@@ -63,6 +64,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 	{
 		WantedRender.gameObject.SetActive(false);
 		Received = true;
+		WaitTimer.Stop();
 		CustomerQueue.CustomerFinished?.Invoke(gameObject);
 	}
 
