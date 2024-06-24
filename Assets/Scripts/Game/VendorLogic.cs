@@ -54,6 +54,7 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 		cost_text.gameObject.SetActive(true);
 		WaitTimer.duration = PatientTime;
 		WaitTimer.Begin();
+		GameObject.Find("Audio").GetComponent<SFXManager>().PlayVendor();
 	}
 
 	void OnPatientRanOut()
