@@ -16,8 +16,6 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 	public SpriteRenderer SpeechBubble;
 	public TMP_Text cost_text;
 	public Timer WaitTimer;
-	public GameObject Popup;
-
 	public override void Awake()
 	{
 		base.Awake();
@@ -74,10 +72,9 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 
 	public void OnClick()
 	{
-		if (GameManager.Instance.player.Append(sellingMaterial))
+		if (GameManager.Instance.player.Append(sellingMaterial) && !WaitTimer.isPaused)
 		{
 			DeliverProduct();
 		}
-
 	}
 }

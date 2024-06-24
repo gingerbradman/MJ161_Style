@@ -12,7 +12,6 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 	}
 	public Image WantedRender;
 	public Timer WaitTimer;
-	public GameObject Popup;
 	public bool Received;
 	public override void Awake()
 	{
@@ -45,6 +44,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 
 	public void StartWaiting()
 	{
+
 		WantedRender.gameObject.SetActive(true);
 		WaitTimer.duration = PatientTime;
 		WaitTimer.Begin();
@@ -65,9 +65,6 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 
 	public void OnClick()
 	{
-		if (GameManager.Instance.player.Remove(productWanted))
-		{
-			DeliverProduct();
-		}
+		if (GameManager.Instance.player.Remove(productWanted) && !WaitTimer.isPaused) DeliverProduct();
 	}
 }
