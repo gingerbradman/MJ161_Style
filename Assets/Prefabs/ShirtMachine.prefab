@@ -194,10 +194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4917528806853716026}
     m_Modifications:
-    - target: {fileID: -5453352755605745316, guid: e518342c9a5e4bb44b14312643965949, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d435a3bec5f71414183d27a40ba0ab24, type: 3}
     - target: {fileID: 6142514580873826072, guid: e518342c9a5e4bb44b14312643965949, type: 3}
       propertyPath: m_Name
       value: PopUp
@@ -236,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387725568665257678, guid: e518342c9a5e4bb44b14312643965949, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8387725568665257678, guid: e518342c9a5e4bb44b14312643965949, type: 3}
       propertyPath: m_LocalPosition.x
@@ -272,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387725568665257678, guid: e518342c9a5e4bb44b14312643965949, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -68
       objectReference: {fileID: 0}
     - target: {fileID: 8387725568665257678, guid: e518342c9a5e4bb44b14312643965949, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

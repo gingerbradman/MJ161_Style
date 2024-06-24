@@ -19,4 +19,4 @@ MonoBehaviour:
   ProductionTime: 3
   sprite: {fileID: 461232353, guid: a2c3fa4778d293d4eba6e7ae5623025e, type: 3}
   location: {fileID: 0}
-  cost: 150
+  cost: 0

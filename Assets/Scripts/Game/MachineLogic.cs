@@ -8,12 +8,12 @@ public class MachineLogic : RenderedObject
 	public event Global.Event MachineStarted;
 	protected Timer ProductionTimer;
 	public bool InProduction;
-	[SerializeField] protected MachineBase machine;
+	public MachineBase machine;
 	[SerializeField] SpriteRenderer In1;
 	[SerializeField] SpriteRenderer In2;
 	[SerializeField] SpriteRenderer Out;
 
-	void Start()
+	public void Init()
 	{
 		ProductionTimer = Timer.CreateTimer(machine.ProductionTime, gameObject, true, false, false);
 		ProductionTimer.OnTimerEnded += OnTimerEnded;
@@ -26,6 +26,8 @@ public class MachineLogic : RenderedObject
 			In2.sprite = machine.materialsRequired[1].Icon;
 		}
 		Out.sprite = machine.product.Icon;
+
+		gameObject.transform.position = machine.location.position;
 	}
 
 	public void StartProduction()

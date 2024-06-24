@@ -64,6 +64,9 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 
 	public void OnClick()
 	{
-		if (GameManager.Instance.player.Remove(productWanted)) DeliverProduct();
+		if (GameManager.Instance.player.Remove(productWanted))
+		{
+			DeliverProduct();
+		}
 	}
 }

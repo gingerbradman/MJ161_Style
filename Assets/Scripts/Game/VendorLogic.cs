@@ -64,6 +64,10 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 
 	public void OnClick()
 	{
-		if (GameManager.Instance.player.Append(sellingMaterial)) DeliverProduct();
+		if (GameManager.Instance.player.Append(sellingMaterial))
+		{
+			DeliverProduct();
+		}
+
 	}
 }

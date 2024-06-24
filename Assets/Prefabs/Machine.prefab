@@ -590,7 +590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &670409797333157234
 Transform:
   m_ObjectHideFlags: 0
@@ -622,5 +622,8 @@ MonoBehaviour:
   renderObject: {fileID: 8115756964651206403}
   InProduction: 0
   machine: {fileID: 11400000, guid: d3aa1915f6d94694b92ff82b4f7610e7, type: 2}
+  In1: {fileID: 0}
+  In2: {fileID: 0}
+  Out: {fileID: 0}
   show_material: {fileID: 6081071828258291607}
   Popup: {fileID: 4656855117069309248}
