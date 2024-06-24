@@ -63,6 +63,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 
 	public void DeliverProduct()
 	{
+		GameManager.Instance.player.Remove(productWanted);
 		WantedRender.gameObject.SetActive(false);
 		Received = true;
 		WaitTimer.Stop();
@@ -71,7 +72,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 
 	public void OnClick()
 	{
-		if (GameManager.Instance.player.Remove(productWanted))
+		if (GameManager.Instance.player.products.Contains(productWanted) && !WaitTimer.isPaused)
 		{
 			DeliverProduct();
 		}
