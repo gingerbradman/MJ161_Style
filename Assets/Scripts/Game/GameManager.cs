@@ -58,7 +58,6 @@ public class GameManager : Singleton<GameManager>
 		}
 		CurrentDay = Days[0];
 		Days.RemoveAt(0);
-		daySystem.StartDay();
 	}
 
 	void OnDaySet(DayControl day)
