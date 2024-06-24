@@ -19,7 +19,8 @@ public class GameManager : Singleton<GameManager>
 	public List<SpriteRenderer> productsSprites;
 	public List<Sprite> VendorSprites = new List<Sprite>();
 	public GameObject slotPrefab;
-	public DayReport report;
+	[HideInInspector] public DayReport report;
+	public GameObject DailyReport;
 	public List<DayControl> Days = new List<DayControl>();
 
 	DayControl current_day;
@@ -39,6 +40,7 @@ public class GameManager : Singleton<GameManager>
 		quotaSystem.UpdateQuotaText();
 		CustomerQueue.CustomerFinished += OnCustomerFinished;
 		daySystem.DayStarted += OnDayStarted;
+		daySystem.DayEnded += OnDayEnded;
 	}
 
 	void Start()
@@ -48,12 +50,15 @@ public class GameManager : Singleton<GameManager>
 
 	void OnDayStarted()
 	{
+		report = ScriptableObject.CreateInstance<DayReport>();
 		if (Days.Count == 0)
 		{
 			//win
+			return;
 		}
 		CurrentDay = Days[0];
 		Days.RemoveAt(0);
+		daySystem.StartDay();
 	}
 
 	void OnDaySet(DayControl day)
@@ -64,12 +69,19 @@ public class GameManager : Singleton<GameManager>
 		Customerqueue.SpawnCustomers(currentCustomerCount);
 	}
 
+	void OnDayEnded()
+	{
+		Debug.Log("AA");
+		DailyReport.SetActive(true);
+		DailyReport.GetComponent<DailyReport>().SetReport(report);
+	}
+
 	void OnCustomerFinished(GameObject customer)
 	{
 		if (Customerqueue.queue[0] == customer)
 		{
 			currentCustomerCount --;
-			if (customer.GetComponent<CustomerLogic>().Received) {}
+			if (customer.GetComponent<CustomerLogic>().Received) {report.customer_served ++;}
 		}
 		if (currentCustomerCount <= 0)
 		{

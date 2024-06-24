@@ -30,7 +30,7 @@ public class CameraMoveZone : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		while (true)
 		{
 			yield return new WaitForSeconds(MoveSpeed);
-			MainCamera.MoveCameraInDirection.Invoke(MoveAmount);
+			MainCamera.MoveCameraInDirection?.Invoke(MoveAmount);
 		}
 	}
 }

@@ -26,8 +26,9 @@ public class PlayerStorage : ScriptableObject
 		{
 			case ItemMaterial:
 				int value = (what as ItemMaterial).ExpectedValue;
-				if (value < GetCurrency() && materials.Count < maxInventory)
+				if (value <= GetCurrency() && materials.Count < maxInventory)
 				{
+					GameManager.Instance.report.material_bought ++;
 					UpdateCurrency(GetCurrency() - value);
 					materials.Add(what as ItemMaterial);
 					GameManager.Instance.UpdateInventory();
@@ -79,6 +80,10 @@ public class PlayerStorage : ScriptableObject
 
 	public void UpdateCurrency(int x)
 	{
+		if (x > GetCurrency())
+		{
+			GameManager.Instance.report.money_made += x - GetCurrency();
+		}
 		m_currency = x;
 		UpdateCurrencyText();
 	}
