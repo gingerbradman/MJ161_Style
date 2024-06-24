@@ -139,7 +139,6 @@ MonoBehaviour:
   productWanted: {fileID: 0}
   WantedRender: {fileID: 1918297282324392291}
   WaitTimer: {fileID: 4656799093875614795}
-  Popup: {fileID: 0}
   Received: 0
 --- !u!114 &4656799093875614795
 MonoBehaviour:

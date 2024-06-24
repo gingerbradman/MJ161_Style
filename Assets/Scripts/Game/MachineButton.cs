@@ -23,7 +23,7 @@ public class MachineButton : MonoBehaviour
     {
         PlayerStorage player = GameManager.Instance.player;
         int current_currency = player.GetCurrency();
-        if (current_currency > m_machine.cost)
+        if (current_currency >= m_machine.cost)
         {
             player.UpdateCurrency(current_currency - m_machine.cost);
             gameObject.SetActive(false);
