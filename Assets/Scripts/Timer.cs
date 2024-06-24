@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 // NOTE: 	You can create a new timer in script, use the static CreateTimer method.
