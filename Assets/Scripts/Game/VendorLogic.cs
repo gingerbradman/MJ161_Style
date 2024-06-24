@@ -5,8 +5,8 @@ using TMPro;
 public class VendorLogic : RenderedObject, IPooled, NPCLogic
 {
 	public ItemMaterial sellingMaterial;
-	const float MINIMUM_PATIENT_TIME = 0;
-	const float MAXIMUM_PATIENT_TIME = 0;
+	const float MINIMUM_PATIENT_TIME = 4;
+	const float MAXIMUM_PATIENT_TIME = 8;
 	public float PatientTime
 	{
 		get => Random.Range(MINIMUM_PATIENT_TIME, MAXIMUM_PATIENT_TIME);

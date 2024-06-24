@@ -56,6 +56,11 @@ public class CustomerQueue : MonoBehaviour
 				g = GameManager.Instance.VendorPool.GetObject(transform);
 			}
 			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * queue.Count);
+			if (queueType == QueueType.CUSTOMER)
+			{
+				g.GetComponent<CustomerLogic>().DecorateCustomer();
+			}
+			else if (queueType == QueueType.VENDOR) g.GetComponent<VendorLogic>().DecorateVendor();
 			queue.Add(g);
 		}
 	}
