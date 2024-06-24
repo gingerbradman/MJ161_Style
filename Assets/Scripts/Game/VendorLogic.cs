@@ -13,6 +13,7 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 		get => Random.Range(MINIMUM_PATIENT_TIME, MAXIMUM_PATIENT_TIME);
 	}
 	public Image WantedRender;
+	public SpriteRenderer SpeechBubble;
 	public TMP_Text cost_text;
 	public Timer WaitTimer;
 	public GameObject Popup;
