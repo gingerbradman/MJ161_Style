@@ -17,7 +17,7 @@ public class QuotaSystem : MonoBehaviour
 
 	public void UpdateQuota(int x)
 	{
-		CurrentQuota += x;
+		CurrentQuota = x;
 		UpdateQuotaText();
 	}
 

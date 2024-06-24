@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4078a0af1e54d1a43ab7ea155993f845, type: 3}
   m_Name: Settings 1
   m_EditorClassIdentifier: 
-  materials:
-  - {fileID: 11400000, guid: 9785ea67cc69b1547b8360145774e0fb, type: 2}
+  materials: []
   products: []
+  maxInventory: 13
   m_currency: 40
   currency_text: {fileID: 0}

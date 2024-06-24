@@ -42,11 +42,6 @@ public class CustomerQueue : MonoBehaviour
 		}
 	}
 
-	void Start()
-	{
-		SpawnCustomers(5);
-	}
-
 	public void SpawnCustomers(int count)
 	{
 		for (int i = 0; i < count; i++)
@@ -60,7 +55,7 @@ public class CustomerQueue : MonoBehaviour
 			{
 				g = GameManager.Instance.VendorPool.GetObject(transform);
 			}
-			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * i);
+			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * queue.Count);
 			queue.Add(g);
 		}
 	}
@@ -91,6 +86,7 @@ public class CustomerQueue : MonoBehaviour
 	{
 		if (queue.Count > 0 && MoveTo.position.y - queue[0].transform.position.y < 1) UpdateQueue(queue, MoveTo);
 		if (leaving.Count > 0 && Exit.position.y - leaving[0].transform.position.y < 1) UpdateQueue(leaving, Exit);
+		if (queueType == QueueType.VENDOR && queue.Count < 5) SpawnCustomers(1);
 	}
 
 	void OnCustomerFinished(GameObject gameObject)

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c98ce188b69619428504b47d3781e32, type: 3}
-  m_Name: Coton
+  m_Script: {fileID: 11500000, guid: f75598db5ea2af94f98ba74bb18e8f9b, type: 3}
+  m_Name: Day 6
   m_EditorClassIdentifier: 
-  Name: Cotton
-  Icon: {fileID: -1659690340, guid: e09b33d15fcd48742aa60fb3982a649c, type: 3}
-  materialDescription: 
-  ExpectedValue: 10
+  CustomerCount: 18
+  Quota: 750
