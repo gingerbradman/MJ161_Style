@@ -86,6 +86,7 @@ public class CustomerQueue : MonoBehaviour
 	{
 		if (queue.Count > 0 && MoveTo.position.y - queue[0].transform.position.y < 1) UpdateQueue(queue, MoveTo);
 		if (leaving.Count > 0 && Exit.position.y - leaving[0].transform.position.y < 1) UpdateQueue(leaving, Exit);
+		if (queueType == QueueType.VENDOR && queue.Count < 5) SpawnCustomers(1);
 	}
 
 	void OnCustomerFinished(GameObject gameObject)

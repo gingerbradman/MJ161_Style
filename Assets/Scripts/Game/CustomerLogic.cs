@@ -13,7 +13,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 	public Image WantedRender;
 	public Timer WaitTimer;
 	public GameObject Popup;
-
+	public bool Received;
 	public override void Awake()
 	{
 		base.Awake();
@@ -59,6 +59,7 @@ public class CustomerLogic : RenderedObject, IPooled, NPCLogic
 	public void DeliverProduct()
 	{
 		WantedRender.gameObject.SetActive(false);
+		Received = true;
 		CustomerQueue.CustomerFinished?.Invoke(gameObject);
 	}
 

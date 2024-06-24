@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
 	public List<SpriteRenderer> productsSprites;
 	public List<Sprite> VendorSprites = new List<Sprite>();
 	public GameObject slotPrefab;
+	public DayReport report;
 	public List<DayControl> Days = new List<DayControl>();
 
 	DayControl current_day;
@@ -66,6 +67,11 @@ public class GameManager : Singleton<GameManager>
 	void OnCustomerFinished(GameObject customer)
 	{
 		if (Customerqueue.queue[0] == customer)
+		{
+			currentCustomerCount --;
+			if (customer.GetComponent<CustomerLogic>().Received) {}
+		}
+		if (currentCustomerCount <= 0)
 		{
 			daySystem.EndDay();
 		}
