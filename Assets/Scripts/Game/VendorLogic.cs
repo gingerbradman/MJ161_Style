@@ -5,8 +5,8 @@ using TMPro;
 public class VendorLogic : RenderedObject, IPooled, NPCLogic
 {
 	public ItemMaterial sellingMaterial;
-	const float MINIMUM_PATIENT_TIME = 4;
-	const float MAXIMUM_PATIENT_TIME = 8;
+	const float MINIMUM_PATIENT_TIME = 0;
+	const float MAXIMUM_PATIENT_TIME = 0;
 	public float PatientTime
 	{
 		get => Random.Range(MINIMUM_PATIENT_TIME, MAXIMUM_PATIENT_TIME);
@@ -43,6 +43,7 @@ public class VendorLogic : RenderedObject, IPooled, NPCLogic
 		WantedRender.sprite = sellingMaterial.Icon;
 		cost_text.text = "$"+sellingMaterial.ExpectedValue;
 		cost_text.gameObject.SetActive(false);
+		renderObject.transform.SetParent(GameObject.FindGameObjectWithTag(Global.CANVAS_GROUP).transform);
 	}
 
 	public Timer GetTimer()
