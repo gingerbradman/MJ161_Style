@@ -33,5 +33,8 @@ public class MachineManager : Singleton<MachineManager>
         MachineRenderUI script = inst.gameObject.GetComponent<MachineRenderUI>();
         script.machine = machine;
         script.Init();
+        GameManager.Instance.ProductUnlocked.Add(machine.product);
+        GameManager.Instance.MaterialsSold.Add(machine.materialsRequired[0]);
+        if (machine.materialsRequired[1] != null) GameManager.Instance.MaterialsSold.Add(machine.materialsRequired[1]);
     }
 }

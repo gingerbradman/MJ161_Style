@@ -953,7 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customer: {fileID: 280254525}
   vendor: {fileID: 280254526}
-  music: {fileID: 0}
+  music: {fileID: 280254523}
 --- !u!114 &280254525
 MonoBehaviour:
   m_ObjectHideFlags: 0
