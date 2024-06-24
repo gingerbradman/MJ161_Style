@@ -1,6 +1,5 @@
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEditor.UI;
 using TMPro;
 
 public class VendorLogic : RenderedObject, IPooled, NPCLogic
