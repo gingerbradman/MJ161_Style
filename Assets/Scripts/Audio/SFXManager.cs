@@ -10,9 +10,12 @@ class SFXManager : MonoBehaviour
 
     public StudioEventEmitter customer;
     public StudioEventEmitter vendor;
+    public StudioEventEmitter music;
 
     void Start()
     {
+        GameManager.Instance.daySystem.DayStarted += MusicStart;
+        GameManager.Instance.daySystem.DayEnded += MusicEnd;
     }
 
     public void PlayCustomer()
@@ -24,6 +27,14 @@ class SFXManager : MonoBehaviour
     public void PlayVendor()
     {
         vendor.Play();
+    }
+
+    public void MusicStart() {
+        music.Play();
+    }
+
+    public void MusicEnd() {
+        music.Stop();
     }
 
 }
