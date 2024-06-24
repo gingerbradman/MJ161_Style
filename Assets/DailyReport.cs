@@ -41,6 +41,7 @@ public class DailyReport : MonoBehaviour
 	{
 		if (GameManager.Instance.player.GetCurrency() >= GameManager.Instance.quotaSystem.CurrentQuota)
 		{
+			GameManager.Instance.player.UpdateCurrency(GameManager.Instance.player.GetCurrency() - GameManager.Instance.quotaSystem.CurrentQuota);
 			GameManager.Instance.daySystem.StartDay();
 			gameObject.SetActive(false);
 		}
