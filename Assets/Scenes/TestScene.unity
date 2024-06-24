@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a49a1fb155e304990cda6b9b35939b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 180
   time_left: 0
   LoopTimer: 0
   StartOnBegin: 0
