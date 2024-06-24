@@ -55,7 +55,7 @@ public class CustomerQueue : MonoBehaviour
 			{
 				g = GameManager.Instance.VendorPool.GetObject(transform);
 			}
-			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * i);
+			g.transform.position = MoveFrom.position + new Vector3(0, minimum_distance * queue.Count);
 			queue.Add(g);
 		}
 	}

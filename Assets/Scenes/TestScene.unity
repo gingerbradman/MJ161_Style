@@ -663,7 +663,7 @@ MonoBehaviour:
   quota_text: {fileID: 1330702688}
   CustomerPool: {fileID: 1200743425}
   VendorPool: {fileID: 813779307}
-  Customerqueue: {fileID: 0}
+  Customerqueue: {fileID: 1863072789}
   ProductUnlocked:
   - {fileID: 11400000, guid: 266c507c8955c54488e90865c2d8e938, type: 2}
   - {fileID: 11400000, guid: a75595c1d5049f5498da49734120d847, type: 2}
@@ -710,6 +710,7 @@ MonoBehaviour:
   - {fileID: -1915232442, guid: ef34602dba08d6f4cbf8655b43288886, type: 3}
   - {fileID: -346601712, guid: ef34602dba08d6f4cbf8655b43288886, type: 3}
   slotPrefab: {fileID: 7689909731420134481, guid: acf4136c9c7b3d24380d65269753ecff, type: 3}
+  report: {fileID: 0}
   Days:
   - {fileID: 11400000, guid: f17307dcacde87242a07359b68897411, type: 2}
   - {fileID: 11400000, guid: fd18070fa01e03d4e8f72f59ae23f2e6, type: 2}
@@ -5007,7 +5008,6 @@ GameObject:
   - component: {fileID: 1577539394}
   - component: {fileID: 1577539393}
   - component: {fileID: 1577539392}
-  - component: {fileID: 1577539395}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -5064,21 +5064,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1577539395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577539391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9e4a5123b4caa488ea6b50c8b46fa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveAmount: {x: 0, y: 0}
-  MoveSpeed: 0.01
-  canvas: {fileID: 0}
 --- !u!1 &1588183676
 GameObject:
   m_ObjectHideFlags: 0
