@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4078a0af1e54d1a43ab7ea155993f845, type: 3}
-  m_Name: Settings 1
+  m_Script: {fileID: 11500000, guid: f75598db5ea2af94f98ba74bb18e8f9b, type: 3}
+  m_Name: Day 7
   m_EditorClassIdentifier: 
-  materials: []
-  products: []
-  maxInventory: 13
-  m_currency: 40
-  currency_text: {fileID: 0}
+  CustomerCount: 20
+  Quota: 1000
