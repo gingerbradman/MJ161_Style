@@ -77,7 +77,7 @@ public class GameManager : Singleton<GameManager>
 
 	void OnCustomerFinished(GameObject customer)
 	{
-		if (Customerqueue.queue[0] == customer)
+		if (Customerqueue.queue.Count > 0 && Customerqueue.queue[0] == customer)
 		{
 			currentCustomerCount --;
 			if (customer.GetComponent<CustomerLogic>().Received) {report.customer_served ++;}

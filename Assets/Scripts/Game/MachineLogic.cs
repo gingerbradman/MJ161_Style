@@ -61,7 +61,6 @@ public class MachineLogic : RenderedObject
 	{
 		InProduction = false;
 		GameManager.Instance.player.Append(machine.product);
-		GameManager.Instance.UpdateInventory();
 	}
 
 	bool CheckRequirementMet()

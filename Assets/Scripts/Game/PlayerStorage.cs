@@ -31,7 +31,6 @@ public class PlayerStorage : ScriptableObject
 					GameManager.Instance.report.material_bought ++;
 					UpdateCurrency(GetCurrency() - value);
 					materials.Add(what as ItemMaterial);
-					GameManager.Instance.UpdateInventory();
 					res = true;
 				}
 				break;
@@ -40,12 +39,11 @@ public class PlayerStorage : ScriptableObject
 				if (products.Count < maxInventory)
 				{
 					products.Add(what as Product);
-					GameManager.Instance.UpdateInventory();
 					res = true;
 				}
 				break;
 		}
-
+		GameManager.Instance.UpdateInventory();
 		return res;
 	}
 
@@ -58,7 +56,6 @@ public class PlayerStorage : ScriptableObject
 				if (materials.Contains(what as ItemMaterial))
 				{
 					materials.Remove(what as ItemMaterial);
-					GameManager.Instance.UpdateInventory();
 					res = true;
 				}
 				break;
@@ -68,12 +65,11 @@ public class PlayerStorage : ScriptableObject
 					int value = (what as Product).productValue;
 					UpdateCurrency(GetCurrency() + value);
 					products.Remove(what as Product);
-					GameManager.Instance.UpdateInventory();
 					res = true;
 				}
 				break;
 		}
-
+		GameManager.Instance.UpdateInventory();
 		return res;
 	}
 
