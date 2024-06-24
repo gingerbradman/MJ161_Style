@@ -26,7 +26,7 @@ public class PlayerStorage : ScriptableObject
 		{
 			case ItemMaterial:
 				int value = (what as ItemMaterial).ExpectedValue;
-				if (value < GetCurrency() && materials.Count < maxInventory)
+				if (value <= GetCurrency() && materials.Count < maxInventory)
 				{
 					UpdateCurrency(GetCurrency() - value);
 					materials.Add(what as ItemMaterial);
