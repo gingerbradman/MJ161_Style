@@ -4,8 +4,10 @@ Small clothing shop simulator game. Buy material, make and sell products to meet
 
 ![game](https://github.com/gingerbradman/portfolio/blob/master/static/clips/ClothesMindedClip.webp)
 
-## Browser Compatibility
+## Details
 The game is published and tested on itch.io 
+
+Developed in Unity. Art created in Aseprite.
 
 ## Created for
 
