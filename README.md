@@ -2,6 +2,8 @@
 
 Small clothing shop simulator game. Buy material, make and sell products to meet your daily quota!
 
+Play it here: https://idlecore.itch.io/clothes-minded
+
 ![game](https://github.com/gingerbradman/portfolio/blob/master/static/clips/ClothesMindedClip.webp)
 
 ## Details
